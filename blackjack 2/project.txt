@@ -1,0 +1,38 @@
+var FizzBuzzPlus = {
+    isFizzBuzzie : function(num)
+    {
+        if ((num % 3) === 0 && (num % 5) === 0)
+            return false;
+        else
+            if ((num % 3) === 0)
+                return true;
+            else
+                if ((num % 5) === 0)
+                    return true;
+                else
+                    return false;
+    },
+    getFizzBuzzSum : function(num)
+    {
+        var i, sum = 0;
+        for (i = 1; i < num; i++)
+            if(this.isFizzBuzzie(i))
+                sum = sum + i;
+        return sum;
+    },
+    getFizzBuzzCount : function(num)
+    {
+        var i, count = 0;
+        for (i = 0; i < num; i++)
+            if(this.isFizzBuzzie(i))
+                count++;
+        return count;
+    },
+    getFizzBuzzAverage : function(num)
+    {
+        average = (this.getFizzBuzzSum(num) / this.getFizzBuzzCount(num));
+        return average;
+    }
+};
+
+console.log(FizzBuzzPlus.getFizzBuzzAverage(100));
